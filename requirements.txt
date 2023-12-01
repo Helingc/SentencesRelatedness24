@@ -1,3 +1,6 @@
+# local package
+-e .
+
 gensim
 sent2vec
 pandas
@@ -6,3 +9,6 @@ scikit-learn
 ipywidgets
 ipykernel
 xgboost
+isort
+black
+flake8
