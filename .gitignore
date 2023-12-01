@@ -154,6 +154,8 @@ cython_debug/
 
 *.vec
 
+cc.en.300.bin
+
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
