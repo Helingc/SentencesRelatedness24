@@ -1,1 +1,8 @@
 gensim
+sent2vec
+pandas
+numpy
+scikit-learn
+ipywidgets
+ipykernel
+xgboost
