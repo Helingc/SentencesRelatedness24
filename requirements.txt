@@ -6,3 +6,4 @@ scikit-learn
 ipywidgets
 xgboost
 nltk
+sentence_transformers
