@@ -161,3 +161,6 @@ cython_debug/
 
 # Pretrained models
 *.bin
+
+# Lightning logs
+notebooks/lightning_logs/
