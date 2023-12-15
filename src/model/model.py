@@ -2,6 +2,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import torch
 from scipy.stats import spearmanr, pearsonr
 import lightning as pl
+import torch.functional as F
 
 class SentenceSimilarityModel(pl.LightningModule):
     def __init__(self, learning_rate=1.737e-6):
