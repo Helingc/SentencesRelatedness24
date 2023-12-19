@@ -9,3 +9,4 @@ nltk
 transformers
 sentence_transformers
 lightning
+huggingface_hub
