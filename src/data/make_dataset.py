@@ -8,15 +8,18 @@ from transformers import AutoTokenizer
 from torch.utils.data import DataLoader
 import lightning as pl
 from sklearn.model_selection import train_test_split
+import string
+
 
 
 
 
 class str_dataset(torch.utils.data.Dataset):
-    def __init__(self, dataframe, syn_replace = False, sep = '[SEP]'):
+    def __init__(self, dataframe, syn_replace = False, change_random_letter = False, sep = '[SEP]'):
         self.dataframe = dataframe
         self.tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
         self.syn_replace = syn_replace
+        self.change_random_letter = change_random_letter
         nltk.download('wordnet')
 
         self.dataframe['input'] = self.dataframe.apply(lambda row : row['Text'].replace('\n',sep),axis = 1)
@@ -29,8 +32,11 @@ class str_dataset(torch.utils.data.Dataset):
         # Adjust this based on your DataFrame structure
         features = self.dataframe['input'].loc[idx]
 
+        if self.change_random_letter:
+            features = self.apply_change_letter(features)
+
         if self.syn_replace and random.random() < 0.3:
-            features = self.apply_augmentation(features)
+            features = self.apply_syn_replacement(features)
 
         token = self.tokenizer(features, return_tensors='pt', truncation='longest_first', padding='max_length',max_length=265)
 
@@ -58,19 +64,49 @@ class str_dataset(torch.utils.data.Dataset):
 
         return random.choice(candidates)
 
-    def apply_augmentation(self,seq):
+    def apply_syn_replacement(self,seq):
         word = self.get_replacable_word(seq)
         seq = seq.replace(word,random.choice(self.get_synonyms(word)))
         return seq
 
+    def get_random_word(self, seq : str,sep :str = '[SEP]', min_len : int = 3,seed : int = 42) -> str:
+        #random.seed(seed)
+        seq = seq.replace(sep,'')
+        seq = re.sub(r"[^a-zA-Z0-9]+", ' ', seq)
+        seq = list(set(seq.split()))
+        candidates = [word for word in seq if len(word) >= min_len]
+
+        if(candidates == []):
+            return None
+
+        return random.choice(candidates)
+
+    #changes one random letter of the word
+    #dont interchange first or last letter
+    def replace_letter(self, word : str, seed : int = 42)-> str:
+        #random.seed(42)
+        if len(word) <=2:
+            return word
+        idx = random.randint(1,len(word)-2)
+        mod_word = word[:idx] + random.choice(string.ascii_lowercase) + word[idx + 1:]
+        return mod_word
+
+    def apply_change_letter(self,seq : str, p : int = 0.3, sep :str = '[SEP]'):
+        sentence = seq.split(sep)
+        word = self.get_random_word(sentence[0],sep)
+        if word == None or random.random() > p:
+            return seq
+        return sentence[0].replace(word,self.replace_letter(word)) + sep + sentence[1]
+
 
 
 class STR_DataModule(pl.LightningDataModule):
-    def __init__(self, train_data, batch_size=32, syn_replace = False):
+    def __init__(self, train_data, batch_size=32, syn_replace = False, change_random_letter = False):
         super().__init__()
         self.batch_size = batch_size
         self.train_data = train_data
         self.syn_replace = syn_replace
+        self.change_random_letter = change_random_letter
 
     def prepare_data_per_node(self):
     # Return True if you want prepare_data to be called on each node
@@ -78,8 +114,8 @@ class STR_DataModule(pl.LightningDataModule):
 
     def prepare_data(self):
         train_df, val_df = train_test_split(self.train_data, test_size=0.2, random_state=42)
-        self.train_dataset = str_dataset(train_df.reset_index(drop=True),syn_replace = self.syn_replace)
-        self.val_dataset = str_dataset(val_df.reset_index(drop=True),syn_replace = False)
+        self.train_dataset = str_dataset(train_df.reset_index(drop=True),syn_replace = self.syn_replace, change_random_letter = self.change_random_letter)
+        self.val_dataset = str_dataset(val_df.reset_index(drop=True),syn_replace = False, change_random_letter = False)
 
     def train_dataloader(self):
         return DataLoader(self.train_dataset, batch_size=self.batch_size,num_workers = 2, shuffle=True)

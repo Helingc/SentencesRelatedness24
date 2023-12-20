@@ -44,8 +44,22 @@ class SentenceSimilarityModel(pl.LightningModule):
         self.log("val_spearman",spearman,on_epoch = True, prog_bar = True)
 
 
+    def test_step(self, batch, batch_idx):
+        input_ids, attention_mask, score = batch
+        logits = self(input_ids, attention_mask)
+
+        # print("Score:", score)
+        # print('Score_var:', score.var())
+
+        loss = F.mse_loss(logits, score)
+        spearman = spearmanr(logits.detach().cpu().numpy(), score.detach().cpu().numpy()).statistic
+
+        self.log("test_loss", loss, on_epoch=True, prog_bar=True)
+        self.log("test_spearman", spearman, on_epoch=True, prog_bar=True)
+
+
     def configure_optimizers(self):
-        optimizer = torch.optim.AdamW(self.parameters(), lr=self.learning_rate)
+        optimizer = torch.optim.AdamW(self.parameters(), lr=self.learning_rate, fused = True)
 
         scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=2, min_lr=1e-8)
 

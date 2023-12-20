@@ -17,7 +17,7 @@ from sklearn.model_selection import KFold
 
 if __name__ == '__main__':
 
-    kf = KFold(n_splits=5, shuffle=True, random_state=42)
+    kf = KFold(n_splits=3, shuffle=True, random_state=42)
 
 
 
@@ -26,13 +26,13 @@ if __name__ == '__main__':
 
     all_spearman_corrs = []
 
-    for fold, (train_idx, val_idx) in enumerate(kf.split(train_data)):
+    for fold, (train_idx, test_idx) in enumerate(kf.split(train_data)):
 
-      str_datamodule = STR_DataModule(train_data = train_data.iloc[train_idx], batch_size = 32, syn_replace = True)
+      str_datamodule = STR_DataModule(train_data = train_data.iloc[train_idx].reset_index(drop = True), batch_size = 32, syn_replace = True, change_random_letter = True)
 
       model = SentenceSimilarityModel()
-
-      trainer = pl.Trainer(max_epochs=30,precision="16-mixed",callbacks=[EarlyStopping(monitor="val_loss", patience=3, mode="min")],accelerator='gpu')
+      callbacks=[EarlyStopping(monitor="val_loss", patience=3, mode="min")],
+      trainer = pl.Trainer(max_epochs=40,precision="16-mixed",callbacks=[EarlyStopping(monitor="val_loss", patience=3, mode="min")],accelerator='gpu')
 
       # tuner = pl.tuner.Tuner(trainer)
       # lr_finder = tuner.lr_find(model, datamodule = str_datamodule, min_lr = 1e-7,max_lr= 1e-2)
@@ -45,16 +45,16 @@ if __name__ == '__main__':
 
       trainer.fit(model, datamodule=str_datamodule)
 
-      val_set = str_dataset(train_data.iloc[val_idx])
+      test_set = str_dataset(train_data.iloc[test_idx].reset_index(drop = True))
 
-      val_dataloader = DataLoader(val_set, batch_size = 16, num_workers = 2)
+      test_dataloader = DataLoader(test_set, batch_size = 32, num_workers = 2,shuffle = True)
 
 
-      trainer.test(model, val_dataloader)
+      trainer.test(model, test_dataloader)
 
 
       # Calculate and print the average Spearman correlation
-      average_spearman_corr = trainer.callback_metrics["val_spearman"].mean()
+      average_spearman_corr = trainer.callback_metrics["test_spearman"]
       print(
           f"Average Spearman Correlation for Fold {fold + 1}: {average_spearman_corr}"
       )
