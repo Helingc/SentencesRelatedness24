@@ -1,0 +1,16 @@
+Type,Model,Version,Cross Validation?,Article Result,Our Result,Script Name,Note
+Lexical Overlap,Dice,-,No,0.57,0.57,notebooks/STR_Baseline,
+Static Embeddings,Word2Vec,"mean,  word2vec-google-news-300",No,0.60 (specific pre-trained weights version unknown),0.38,notebooks/Word2Vec_embedding,
+Static Embeddings,Word2Vec,"max,  word2vec-google-news-300",No,0.54 (specific pre-trained weights version unknown),0.3,notebooks/Word2Vec_embedding,
+Static Embeddings,Fasttext,XXX,No,XXX,XXX,XXX,
+Contextual Embeddings,BERT,"mean,  bert-base-uncased",No,0.58 pre-trained weights version unknown,0.596,notebooks/BERT_embedding,
+Contextual Embeddings,BART,"mean,  facebook/bart-large-cnn",No,-,0.67,notebooks/BART_embedding,
+Tunned Model,BERT,bert-base-uncased,5-folded,0.82 pre-trained weights version unknown,0.82,notebooks/BERT_model,
+Tunned Model,BART,bart-base-uncased,5-folded,-,0.85,notebooks/BART_model,
+Tunned Model,BART,facebook/bart-large-cnn,5-folded,-,Model too big to train on Colab,notebooks/BART_model,Can be run in the institute
+Tunned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/sBERT_model,
+Tunned Model,sBERT,all-mpnet-base-v2,5-folded,-,XXX,notebooks/sBERT_model,
+Tunned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
+Tunned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
+Tunned Model,T5,large,5-folded,-,Model too big to train on Colab,notebooks/T5_model,Can be run in the institute
+Tunned LLM, LLAMA2, "7B + classifier", 5-folded, -, -, notebooks/LLAMA2_tunned_model, "Model too large for local machine & Colab. Might be possible to run in the institute"
