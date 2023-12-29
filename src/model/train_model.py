@@ -19,9 +19,6 @@ if __name__ == '__main__':
 
     kf = KFold(n_splits=3, shuffle=True, random_state=42)
 
-
-
-
     train_data = pd.read_csv('/content/eng_train.csv')
 
     all_spearman_corrs = []
@@ -50,7 +47,7 @@ if __name__ == '__main__':
       test_dataloader = DataLoader(test_set, batch_size = 32, num_workers = 2,shuffle = True)
 
 
-      trainer.test(model, test_dataloader)
+      trainer.test(ckpt_path="best", datamodule = test_dataloader)
 
 
       # Calculate and print the average Spearman correlation

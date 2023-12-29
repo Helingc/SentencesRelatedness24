@@ -1,5 +1,5 @@
 import nltk
-from nltk.corpus import wordnet
+from nltk.corpus import wordnet as wn
 import random
 import pandas as pd
 import re
@@ -21,6 +21,8 @@ class str_dataset(torch.utils.data.Dataset):
         self.syn_replace = syn_replace
         self.change_random_letter = change_random_letter
         nltk.download('wordnet')
+        nltk.download('averaged_perceptron_tagger')
+        nltk.download('punkt')
 
         self.dataframe['input'] = self.dataframe.apply(lambda row : row['Text'].replace('\n',sep),axis = 1)
 
@@ -49,27 +51,36 @@ class str_dataset(torch.utils.data.Dataset):
 
         return input_ids, attention_mask, score
 
-    def get_synonyms(self,word):
+    def get_synonym(word : str, pos : str) -> str:
         synonyms = []
-        for syn in wordnet.synsets(word):
+        if pos == None:
+            return word
+        for syn in wn.synsets(word, pos = pos):
             for lemma in syn.lemmas():
                 synonyms.append(lemma.name())
-        return list(set(synonyms))
+        return random.choice(list(set(synonyms)))
 
-    def get_replacable_word(self,seq,sep = '[SEP]'):
+    def get_replacable_word(self,seq : str,sep  : str = '[SEP]') -> str:
         seq = seq.replace(sep,'')
         seq = re.sub(r"[^a-zA-Z0-9]+", ' ', seq)
         seq = list(set(seq.split()))
         candidates = [cand for cand in seq if self.get_synonyms(cand) != []]
 
         return random.choice(candidates)
+    
+    def find_word_type(target_tag):
+        word_type_dict = {wn.ADJ : ['JJ', 'JJR', 'JJS'],wn.ADV : ['RB', 'RBR', 'RBS']}
+        for key, tag_list in word_type_dict.items():
+            if target_tag in tag_list:
+                return key
+        return None  # Tag not found in any list
 
     def apply_syn_replacement(self,seq):
         word = self.get_replacable_word(seq)
         seq = seq.replace(word,random.choice(self.get_synonyms(word)))
         return seq
 
-    def get_random_word(self, seq : str,sep :str = '[SEP]', min_len : int = 3,seed : int = 42) -> str:
+    def get_random_word(self, seq : str,sep :str = '[SEP]', min_len : int = 3, seed : int = 42) -> str:
         #random.seed(seed)
         seq = seq.replace(sep,'')
         seq = re.sub(r"[^a-zA-Z0-9]+", ' ', seq)
