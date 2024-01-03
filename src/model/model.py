@@ -4,6 +4,8 @@ from scipy.stats import spearmanr, pearsonr
 import lightning as pl
 import torch.functional as F
 
+from src.data.data_augmentation import apply_interpol
+
 class SentenceSimilarityModel(pl.LightningModule):
     def __init__(self, learning_rate=1.737e-6):
         super(SentenceSimilarityModel, self).__init__()
