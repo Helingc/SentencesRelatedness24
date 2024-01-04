@@ -12,3 +12,4 @@ ctransformers
 sentence_transformers
 lightning
 huggingface_hub
+guidance
