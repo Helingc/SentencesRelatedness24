@@ -13,4 +13,5 @@ Tunned Model,sBERT,all-mpnet-base-v2,5-folded,-,XXX,notebooks/sBERT_model,
 Tunned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
 Tunned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
 Tunned Model,T5,large,5-folded,-,Model too big to train on Colab,notebooks/T5_model,Can be run in the institute
-Tunned LLM, LLAMA2, "7B + classifier", 5-folded, -, -, notebooks/LLAMA2_tunned_model, "Model too large for local machine & Colab. Might be possible to run in the institute"
+Tunned LLM,LLAMA2,7B + classifier,5-folded,-," -",notebooks/LLAMA2_tunned_model,Model too large for local machine & Colab. Might be possible to run in the institute
+LLM Chat,LLAMA2,llama-2-7b-chat.Q3_K_L.gguf,No,-,XXX,notebooks/LLAMA2_chat,
