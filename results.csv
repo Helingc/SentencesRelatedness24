@@ -14,7 +14,7 @@ Tunned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more
 Tunned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
 Tunned Model,T5,large,5-folded,-,Model too big to train on Colab,notebooks/T5_model,Can be run in the institute
 Tunned LLM,LLAMA2,7B + classifier,5-folded,-," -",notebooks/LLAMA2_tunned_model,Model too large for local machine & Colab. Might be possible to run in the institute
-LLM Chat,LLAMA2,llama-2-7b-chat.Q2_K,No,-,XXX,notebooks/LLAMA2_chat,
-LLM Chat,LLAMA2,llama-2-7b-chat.Q6_K,No,-,XXX,notebooks/LLAMA2_chat,
-LLM Chat,LLAMA2,llama-2-13b-chat.Q6_K,No,-,XXX,notebooks/LLAMA2_chat,
+LLM Chat,LLAMA2,llama-2-7b-chat.Q2_K,No,-,0.06,notebooks/LLAMA2_chat,
+LLM Chat,LLAMA2,llama-2-7b-chat.Q6_K,No,-,0.15,notebooks/LLAMA2_chat,
+LLM Chat,LLAMA2,llama-2-13b-chat.Q6_K,No,-,0.24,notebooks/LLAMA2_chat,
 LLM Chat,LLAMA2,llama-2-70b-chat.Q5_K_M,No,-,Model too big to run locally/on Colab,notebooks/LLAMA2_chat,"Requires 64GB of RAM to run, can be run in the institute"
