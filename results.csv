@@ -1,20 +1,22 @@
 Type,Model,Version,Cross Validation?,Article Result,Our Result,Script Name,Note
 Lexical Overlap,Dice,-,No,0.57,0.57,notebooks/STR_Baseline,
-Static Embeddings,Word2Vec,"mean,  word2vec-google-news-300",No,0.60 (specific pre-trained weights version unknown),0.38,notebooks/Word2Vec_embedding,
-Static Embeddings,Word2Vec,"max,  word2vec-google-news-300",No,0.54 (specific pre-trained weights version unknown),0.3,notebooks/Word2Vec_embedding,
+Static Embeddings,Word2Vec,"mean,  word2vec-google-news-300",No,0.60,0.38,notebooks/Word2Vec_embedding,"Specific, original pre-trained model version unknown."
+Static Embeddings,Word2Vec,"max,  word2vec-google-news-300",No,0.54,0.30,notebooks/Word2Vec_embedding,"Specific, original pre-trained model version unknown."
 Static Embeddings,Fasttext,XXX,No,XXX,XXX,XXX,
-Contextual Embeddings,BERT,"mean,  bert-base-uncased",No,0.58 pre-trained weights version unknown,0.596,notebooks/BERT_embedding,
+Contextual Embeddings,BERT,"mean,  bert-base-uncased",No,0.58,0.60,notebooks/BERT_embedding,"Specific, original pre-trained model version unknown."
 Contextual Embeddings,BART,"mean,  facebook/bart-large-cnn",No,-,0.67,notebooks/BART_embedding,
-Tunned Model,BERT,bert-base-uncased,5-folded,0.82 pre-trained weights version unknown,0.82,notebooks/BERT_model,
+Tunned Model,BERT,bert-base-uncased,5-folded,0.82,0.82,notebooks/BERT_model,"Specific, original pre-trained model version unknown."
 Tunned Model,BART,bart-base-uncased,5-folded,-,0.85,notebooks/BART_model,
-Tunned Model,BART,facebook/bart-large-cnn,5-folded,-,Model too big to train on Colab,notebooks/BART_model,Can be run in the institute
+Tunned Model,BART,facebook/bart-large-cnn,5-folded,-,-,notebooks/BART_model,Might be run in the insitute
 Tunned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/sBERT_model,
 Tunned Model,sBERT,all-mpnet-base-v2,5-folded,-,XXX,notebooks/sBERT_model,
 Tunned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
 Tunned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
-Tunned Model,T5,large,5-folded,-,Model too big to train on Colab,notebooks/T5_model,Can be run in the institute
-Tunned LLM,LLAMA2,7B + classifier,5-folded,-," -",notebooks/LLAMA2_tunned_model,Model too large for local machine & Colab. Might be possible to run in the institute
+Tunned Model,T5,large,5-folded,-,-,notebooks/T5_model,Might be run in the insitute
+Tunned LLM,LLAMA2,HuggingFaceH4/tiny-random-LlamaForSequenceClassification,5-folded,-,0.29,notebooks/LLAMA2_tunned_model,
+Tunned LLM,LLAMA2,princeton-nlp/Sheared-LLaMA-1.3B + trained classifier,5-folded,-,XXX,notebooks/LLAMA2_tunned_model,
+Tunned LLM,LLAMA2,Meta 7B + trained classifier,5-folded,-,-,notebooks/LLAMA2_tunned_model,"Too big too train, requires 80GB of vRAM"
 LLM Chat,LLAMA2,llama-2-7b-chat.Q2_K,No,-,0.06,notebooks/LLAMA2_chat,
 LLM Chat,LLAMA2,llama-2-7b-chat.Q6_K,No,-,0.15,notebooks/LLAMA2_chat,
 LLM Chat,LLAMA2,llama-2-13b-chat.Q6_K,No,-,0.24,notebooks/LLAMA2_chat,
-LLM Chat,LLAMA2,llama-2-70b-chat.Q5_K_M,No,-,Model too big to run locally/on Colab,notebooks/LLAMA2_chat,"Requires 64GB of RAM to run, can be run in the institute"
+LLM Chat,LLAMA2,llama-2-70b-chat.Q5_K_M,No,-,-,notebooks/LLAMA2_chat,"Might be run in the insitute, requires 64GB of RAM to run"
