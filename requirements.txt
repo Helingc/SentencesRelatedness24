@@ -3,9 +3,13 @@ sent2vec
 pandas
 numpy
 scikit-learn
+ipykernel
 ipywidgets
 xgboost
 nltk
 transformers
+ctransformers
 sentence_transformers
 lightning
+huggingface_hub
+guidance
