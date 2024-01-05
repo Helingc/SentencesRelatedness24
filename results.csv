@@ -9,7 +9,7 @@ Tunned Model,BERT,bert-base-uncased,5-folded,0.82,0.82,notebooks/BERT_model,"Spe
 Tunned Model,BART,bart-base-uncased,5-folded,-,0.85,notebooks/BART_model,
 Tunned Model,BART,facebook/bart-large-cnn,5-folded,-,-,notebooks/BART_model,Might be run in the insitute
 Tunned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/sBERT_model,
-Tunned Model,sBERT,all-mpnet-base-v2,5-folded,-,XXX,notebooks/sBERT_model,
+Tunned Model,sBERT,all-mpnet-base-v2,5-folded,-,0.85,notebooks/sBERT_model,
 Tunned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
 Tunned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
 Tunned Model,T5,large,5-folded,-,-,notebooks/T5_model,Might be run in the insitute
