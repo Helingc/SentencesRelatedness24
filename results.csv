@@ -13,6 +13,3 @@ Tuned Model,sBERT,all-mpnet-base-v2,5-folded,-,XXX,notebooks/sBERT_model,
 Tuned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
 Tuned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
 Tuned Model,T5,large,5-folded,-,Model too big to train on Colab,notebooks/T5_model,Can be run in the institute
-Tuned Model, DistillBERT, base, 5-folded,-,0.75,notebooks/Bart_with_Augm.ipynb, without augmentation with validation loop
-Tuned Model, RoBERTa, base, 5-folded,-,0.83,notebooks/Bart_with_Augm.ipynb, without augmentation with validation loop
-Tuned Model, BART, base, 5-folded,-,0.80,notebooks/Bart_with_Augm.ipynb, without augmentation with validation loop
