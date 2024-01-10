@@ -5,11 +5,14 @@ Static Embeddings,Word2Vec,"max,  word2vec-google-news-300",No,0.54 (specific pr
 Static Embeddings,Fasttext,XXX,No,XXX,XXX,XXX,
 Contextual Embeddings,BERT,"mean,  bert-base-uncased",No,0.58 pre-trained weights version unknown,0.596,notebooks/BERT_embedding,
 Contextual Embeddings,BART,"mean,  facebook/bart-large-cnn",No,-,0.67,notebooks/BART_embedding,
-Tunned Model,BERT,bert-base-uncased,5-folded,0.82 pre-trained weights version unknown,0.82,notebooks/BERT_model,
-Tunned Model,BART,bart-base-uncased,5-folded,-,0.85,notebooks/BART_model,
-Tunned Model,BART,facebook/bart-large-cnn,5-folded,-,Model too big to train on Colab,notebooks/BART_model,Can be run in the institute
-Tunned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/sBERT_model,
-Tunned Model,sBERT,all-mpnet-base-v2,5-folded,-,XXX,notebooks/sBERT_model,
-Tunned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
-Tunned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
-Tunned Model,T5,large,5-folded,-,Model too big to train on Colab,notebooks/T5_model,Can be run in the institute
+Tuned Model,BERT,bert-base-uncased,5-folded,0.82 pre-trained weights version unknown,0.82,notebooks/BERT_model,
+Tuned Model,BART,bart-base-uncased,5-folded,-,0.85,notebooks/BART_model,
+Tuned Model,BART,facebook/bart-large-cnn,5-folded,-,Model too big to train on Colab,notebooks/BART_model,Can be run in the institute
+Tuned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/sBERT_model,
+Tuned Model,sBERT,all-mpnet-base-v2,5-folded,-,XXX,notebooks/sBERT_model,
+Tuned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
+Tuned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
+Tuned Model,T5,large,5-folded,-,Model too big to train on Colab,notebooks/T5_model,Can be run in the institute
+Tuned Model, DistillBERT, base, 5-folded,-,0.75,notebooks/Bart_with_Augm.ipynb, without augmentation with validation loop
+Tuned Model, RoBERTa, base, 5-folded,-,0.83,notebooks/Bart_with_Augm.ipynb, without augmentation with validation loop
+Tuned Model, BART, base, 5-folded,-,0.80,notebooks/Bart_with_Augm.ipynb, without augmentation with validation loop
