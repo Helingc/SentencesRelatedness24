@@ -6,8 +6,8 @@ Static Embeddings,Fasttext,XXX,No,XXX,XXX,XXX,
 Contextual Embeddings,BERT,"mean,  bert-base-uncased",No,0.58,0.60,notebooks/BERT_embedding,"Specific, original pre-trained model version unknown."
 Contextual Embeddings,BART,"mean,  facebook/bart-large",No,-,0.67,notebooks/BART_embedding,
 Tunned Model,BERT,bert-base-uncased,5-folded,0.82,0.82,notebooks/BERT_model,"Specific, original pre-trained model version unknown."
-Tunned Model,BART,bart-base-uncased,5-folded,-,0.85,notebooks/BART_model,
-Tunned Model,BART,facebook/bart-large,5-folded,-,-,notebooks/BART_model,Can be run in the insitute
+Tunned Model,BART,facebook/bart-base,5-folded,-,0.85,notebooks/BART_model,
+Tunned Model,BART,facebook/bart-large,5-folded,-,0.87,notebooks/BART_model,
 Tunned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/sBERT_model,
 Tunned Model,sBERT,all-mpnet-base-v2,5-folded,-,0.85,notebooks/sBERT_model,
 Tunned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
