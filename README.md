@@ -6,10 +6,11 @@
 - **Daniel Chrościcki**
 - **Lennart Marx**
 
----
 
 ## Overview
 This project is inspired by the research article ["What Makes Sentences Semantically Related? A Textual Relatedness Dataset and Empirical Study"](https://aclanthology.org/2023.eacl-main.55.pdf). It focuses on exploring and expanding upon the findings of the article, specifically the performance of different Natural Language Processing (NLP) models on the STR2022 dataset which is presented within the original paper and includes 5,500 manually annotated English sentence pairs. 
+
+Our work diligently reproduced the experiments from the original paper, most of which resulted in comparable performance. However, there were instances where our findings diverged. Notably, our project achieved a best cross-validation Spearman correlation score of 0.87, surpassing the 0.83 score reported in the original article. This improvement is a testament to our innovative approaches and thorough experimentation.
 
 ### Experimentation and Methodology
 In our journey to understand and expand upon the original findings, we have:
@@ -61,4 +62,4 @@ Our comprehensive approach not only validates previous findings but also opens n
 
 
 ## Project research document 
-[Google doc](https://docs.google.com/document/d/1IxB6a3DGFe2ermGPOAnsYhukMOtDKvWfV2UXoyiqcYQ/edit#heading=h.bw9p4docrkd1)
+[Google Doc](https://docs.google.com/document/d/1IxB6a3DGFe2ermGPOAnsYhukMOtDKvWfV2UXoyiqcYQ/edit#heading=h.bw9p4docrkd1)
