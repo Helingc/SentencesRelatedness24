@@ -20,3 +20,4 @@ LLM Chat,LLAMA2,llama-2-7b-chat.Q2_K,No,-,0.06,notebooks/LLAMA2_chat,
 LLM Chat,LLAMA2,llama-2-7b-chat.Q6_K,No,-,0.15,notebooks/LLAMA2_chat,
 LLM Chat,LLAMA2,llama-2-13b-chat.Q6_K,No,-,0.24,notebooks/LLAMA2_chat,
 LLM Chat,LLAMA2,llama-2-70b-chat.Q5_K_M,No,-,-,notebooks/LLAMA2_chat,"Can be run in the insitute, requires 64GB of RAM"
+
