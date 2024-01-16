@@ -5,17 +5,17 @@ Static Embeddings,Word2Vec,"max,  word2vec-google-news-300",No,0.54,0.30,noteboo
 Static Embeddings,Fasttext,XXX,No,XXX,XXX,XXX,
 Contextual Embeddings,BERT,"mean,  bert-base-uncased",No,0.58,0.60,notebooks/BERT_embedding,"Specific, original pre-trained model version unknown."
 Contextual Embeddings,BART,"mean,  facebook/bart-large",No,-,0.67,notebooks/BART_embedding,
-Tuned Model,BERT,bert-base-uncased,5-folded,0.82,0.82,notebooks/BERT_model,"Specific, original pre-trained model version unknown."
-Tuned Model,BART,bart-base-uncased,5-folded,-,0.85,notebooks/BART_model,
-Tuned Model,BART,facebook/bart-large,5-folded,-,-,notebooks/BART_model,Can be run in the insitute
-Tuned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/sBERT_model,
-Tuned Model,sBERT,all-mpnet-base-v2,5-folded,-,0.85,notebooks/sBERT_model,
-Tuned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
-Tuned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
-Tuned Model,T5,large,5-folded,-,-,notebooks/T5_model,Can be run in the insitute
-Tuned LLM,LLAMA2,HuggingFaceH4/tiny-random-LlamaForSequenceClassification,5-folded,-,0.29,notebooks/LLAMA2_tunned_model,
-Tuned LLM,LLAMA2,princeton-nlp/Sheared-LLaMA-1.3B + trained classifier,5-folded,-,0.19,notebooks/LLAMA2_tunned_model,"Worth trying with more epochs (15 were run, increasing performance)"
-Tuned LLM,LLAMA2,Meta 7B + trained classifier,5-folded,-,-,notebooks/LLAMA2_tunned_model,"Too big to train, requires 80GB of vRAM"
+Tunned Model,BERT,bert-base-uncased,5-folded,0.82,0.82,notebooks/BERT_model,"Specific, original pre-trained model version unknown."
+Tunned Model,BART,facebook/bart-base,5-folded,-,0.85,notebooks/BART_model,
+Tunned Model,BART,facebook/bart-large,5-folded,-,0.87,notebooks/BART_model,
+Tunned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/sBERT_model,
+Tunned Model,sBERT,all-mpnet-base-v2,5-folded,-,0.85,notebooks/sBERT_model,
+Tunned Model,T5,small,5-folded,-,0.80,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
+Tunned Model,T5,base,5-folded,-,0.83,notebooks/T5_model,"Worth trying with more epochs (9 were run, increasing performance)"
+Tunned Model,T5,large,5-folded,-,-,notebooks/T5_model,Can be run in the insitute
+Tunned LLM,LLAMA2,HuggingFaceH4/tiny-random-LlamaForSequenceClassification,5-folded,-,0.29,notebooks/LLAMA2_tunned_model,
+Tunned LLM,LLAMA2,princeton-nlp/Sheared-LLaMA-1.3B + trained classifier,5-folded,-,0.19,notebooks/LLAMA2_tunned_model,"Worth trying with more epochs (15 were run, increasing performance)"
+Tunned LLM,LLAMA2,Meta 7B + trained classifier,5-folded,-,-,notebooks/LLAMA2_tunned_model,"Too big to train, requires 80GB of vRAM"
 LLM Chat,LLAMA2,llama-2-7b-chat.Q2_K,No,-,0.06,notebooks/LLAMA2_chat,
 LLM Chat,LLAMA2,llama-2-7b-chat.Q6_K,No,-,0.15,notebooks/LLAMA2_chat,
 LLM Chat,LLAMA2,llama-2-13b-chat.Q6_K,No,-,0.24,notebooks/LLAMA2_chat,
