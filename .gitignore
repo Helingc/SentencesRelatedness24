@@ -164,6 +164,8 @@ cython_debug/
 
 # Lightning logs
 notebooks/lightning_logs/
+models/
+.DS_Store
 
 # Pretrained llama models
 *.gguf
