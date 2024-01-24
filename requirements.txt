@@ -13,3 +13,4 @@ sentence_transformers
 lightning
 huggingface_hub
 guidance
+datasets
