@@ -24,5 +24,5 @@ Fine-Tuned LLM,LLAMA2,Meta 7B + trained classifier,5-folded,-,-,notebooks/fine_t
 LLM Chat,LLAMA2,llama-2-7b-chat.Q2_K,No,-,0.06,notebooks/llm_chat_llama2,
 LLM Chat,LLAMA2,llama-2-7b-chat.Q6_K,No,-,0.15,notebooks/llm_chat_llama2,
 LLM Chat,LLAMA2,llama-2-13b-chat.Q6_K,No,-,0.24,notebooks/llm_chat_llama2,
-LLM Chat,LLAMA2,llama-2-70b-chat.Q5_K_M,No,-,-,notebooks/llm_chat_llama2,"Can be run in the insitute, requires 64GB of RAM",
+LLM Chat,LLAMA2,llama-2-70b-chat.Q5_K_M,No,-,-,notebooks/llm_chat_llama2,"Can be run in the insitute, requires 64GB of RAM"
 Fine-Tuned Model,BART,facebook/bart-base,predictions,-,0.8239,notebooks/fine_tuned_model_bart_predictions,"final predictions on dev set submitted to competition"
