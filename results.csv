@@ -8,8 +8,13 @@ Contextual Embeddings,BART,"mean,  facebook/bart-large",No,-,0.67,notebooks/embe
 Fine-Tuned Model,BERT,bert-base-uncased,5-folded,0.82,0.82,notebooks/fine_tuned_model_bert,"Specific, original pre-trained model version unknown."
 Fine-Tuned Model,BART,facebook/bart-base,5-folded,-,0.85,notebooks/fine_tuned_model_bart,
 Fine-Tuned Model,BART,facebook/bart-large,5-folded,-,0.87,notebooks/fine_tuned_model_bart,
+Fine-Tuned Model,BART,facebook/bart-base,predictions,-,0.8239,notebooks/fine_tuned_model_bart_predictions,
 Fine-Tuned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/fine_tuned_model_sbert,
 Fine-Tuned Model,sBERT,all-mpnet-base-v2,5-folded,-,0.85,notebooks/fine_tuned_model_sbert,
+Fine-Tuned Model, RoBERTa, RoBERTa-base,5-folded,0.8312,notebooks/fine_tuned_model_RoBERTa_augumentation,
+Fine-Tuned Model, RoBERTa, RoBERTa-base change random letter data augmentation,5-folded,0.8338,notebooks/fine_tuned_model_RoBERTa_augumentation,
+Fine-Tuned Model, RoBERTa, RoBERTa-base synonym replacement data augmentation,5-folded,0.8340,notebooks/fine_tuned_model_RoBERTa_augumentation,
+Fine-Tuned Model, RoBERTa, RoBERTa-base both data augmentation,5-folded,0.8333,notebooks/fine_tuned_model_RoBERTa_augumentation,
 Fine-Tuned Model,T5,small,5-folded,-,0.80,notebooks/fine_tuned_model_t5,"Worth trying with more epochs (9 were run, increasing performance)"
 Fine-Tuned Model,T5,base,5-folded,-,0.83,notebooks/fine_tuned_model_t5,"Worth trying with more epochs (9 were run, increasing performance)"
 Fine-Tuned Model,T5,large,5-folded,-,-,notebooks/fine_tuned_model_t5,Can be run in the insitute
