@@ -2,7 +2,7 @@ Type,Model,Version,Cross Validation?,Article Result,Our Result,Script Name,Note
 Lexical Overlap,Dice,-,No,0.57,0.57,notebooks/lexical_overlap_dice,
 Static Embeddings,Word2Vec,"mean,  word2vec-google-news-300",No,0.60,0.38,notebooks/embeddings_ststic_word2vec,"Specific, original pre-trained model version unknown."
 Static Embeddings,Word2Vec,"max,  word2vec-google-news-300",No,0.54,0.30,notebooks/embeddings_ststic_word2vec,"Specific, original pre-trained model version unknown."
-Static Embeddings,Fasttext,"mean,  cc.en.300",No,0.29,0.35,notebooks/embeddings_static_fasttext,
+Static Embeddings,Fasttext,"mean,  cc.en.300",No,0.29,0.35,notebooks/embeddings_static_fasttext,"Specific, original pre-trained model version unknown."
 Contextual Embeddings,BERT,"mean,  bert-base-uncased",No,0.58,0.60,notebooks/embeddings_contextual_bert,"Specific, original pre-trained model version unknown."
 Contextual Embeddings,BART,"mean,  facebook/bart-large",No,-,0.67,notebooks/embeddings_contextual_bart,
 Fine-Tuned Model,BERT,bert-base-uncased,5-folded,0.82,0.82,notebooks/fine_tuned_model_bert,"Specific, original pre-trained model version unknown."
