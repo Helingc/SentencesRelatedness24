@@ -2,19 +2,18 @@ Type,Model,Version,Cross Validation?,Article Result,Our Result,Script Name,Note
 Lexical Overlap,Dice,-,No,0.57,0.57,notebooks/lexical_overlap_dice,
 Static Embeddings,Word2Vec,"mean,  word2vec-google-news-300",No,0.60,0.38,notebooks/embeddings_ststic_word2vec,"Specific, original pre-trained model version unknown."
 Static Embeddings,Word2Vec,"max,  word2vec-google-news-300",No,0.54,0.30,notebooks/embeddings_ststic_word2vec,"Specific, original pre-trained model version unknown."
-Static Embeddings,Fasttext,XXX,No,XXX,XXX,XXX,
+Static Embeddings,Fasttext,"mean,  cc.en.300",No,0.29,0.35,notebooks/embeddings_static_fasttext,
 Contextual Embeddings,BERT,"mean,  bert-base-uncased",No,0.58,0.60,notebooks/embeddings_contextual_bert,"Specific, original pre-trained model version unknown."
 Contextual Embeddings,BART,"mean,  facebook/bart-large",No,-,0.67,notebooks/embeddings_contextual_bart,
 Fine-Tuned Model,BERT,bert-base-uncased,5-folded,0.82,0.82,notebooks/fine_tuned_model_bert,"Specific, original pre-trained model version unknown."
 Fine-Tuned Model,BART,facebook/bart-base,5-folded,-,0.85,notebooks/fine_tuned_model_bart,
 Fine-Tuned Model,BART,facebook/bart-large,5-folded,-,0.87,notebooks/fine_tuned_model_bart,
-Fine-Tuned Model,BART,facebook/bart-base,predictions,-,0.8239,notebooks/fine_tuned_model_bart_predictions,
 Fine-Tuned Model,sBERT,all-MiniLM-L6-v2,5-folded,-,0.82,notebooks/fine_tuned_model_sbert,
 Fine-Tuned Model,sBERT,all-mpnet-base-v2,5-folded,-,0.85,notebooks/fine_tuned_model_sbert,
-Fine-Tuned Model, RoBERTa, RoBERTa-base,5-folded,0.8312,notebooks/fine_tuned_model_RoBERTa_augumentation,
-Fine-Tuned Model, RoBERTa, RoBERTa-base change random letter data augmentation,5-folded,0.8338,notebooks/fine_tuned_model_RoBERTa_augumentation,
-Fine-Tuned Model, RoBERTa, RoBERTa-base synonym replacement data augmentation,5-folded,0.8340,notebooks/fine_tuned_model_RoBERTa_augumentation,
-Fine-Tuned Model, RoBERTa, RoBERTa-base both data augmentation,5-folded,0.8333,notebooks/fine_tuned_model_RoBERTa_augumentation,
+Fine-Tuned Model, RoBERTa, RoBERTa-base,5-folded,-,0.8312,notebooks/fine_tuned_model_RoBERTa_augumentation,
+Fine-Tuned Model, RoBERTa, RoBERTa-base change random letter data augmentation,5-folded,-,0.8338,notebooks/fine_tuned_model_RoBERTa_augumentation,
+Fine-Tuned Model, RoBERTa, RoBERTa-base synonym replacement data augmentation,5-folded,-,0.8340,notebooks/fine_tuned_model_RoBERTa_augumentation,
+Fine-Tuned Model, RoBERTa, RoBERTa-base both data augmentation,5-folded,-,0.8333,notebooks/fine_tuned_model_RoBERTa_augumentation,
 Fine-Tuned Model,T5,small,5-folded,-,0.80,notebooks/fine_tuned_model_t5,"Worth trying with more epochs (9 were run, increasing performance)"
 Fine-Tuned Model,T5,base,5-folded,-,0.83,notebooks/fine_tuned_model_t5,"Worth trying with more epochs (9 were run, increasing performance)"
 Fine-Tuned Model,T5,large,5-folded,-,-,notebooks/fine_tuned_model_t5,Can be run in the insitute
@@ -25,4 +24,5 @@ Fine-Tuned LLM,LLAMA2,Meta 7B + trained classifier,5-folded,-,-,notebooks/fine_t
 LLM Chat,LLAMA2,llama-2-7b-chat.Q2_K,No,-,0.06,notebooks/llm_chat_llama2,
 LLM Chat,LLAMA2,llama-2-7b-chat.Q6_K,No,-,0.15,notebooks/llm_chat_llama2,
 LLM Chat,LLAMA2,llama-2-13b-chat.Q6_K,No,-,0.24,notebooks/llm_chat_llama2,
-LLM Chat,LLAMA2,llama-2-70b-chat.Q5_K_M,No,-,-,notebooks/llm_chat_llama2,"Can be run in the insitute, requires 64GB of RAM"
+LLM Chat,LLAMA2,llama-2-70b-chat.Q5_K_M,No,-,-,notebooks/llm_chat_llama2,"Can be run in the insitute, requires 64GB of RAM",
+Fine-Tuned Model,BART,facebook/bart-base,predictions,-,0.8239,notebooks/fine_tuned_model_bart_predictions,"final predictions on dev set submitted to competition"
