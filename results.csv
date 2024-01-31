@@ -16,8 +16,7 @@ Fine-Tuned Model, RoBERTa, RoBERTa-base synonym replacement data augmentation,5-
 Fine-Tuned Model, RoBERTa, RoBERTa-base both data augmentation,5-folded,-,0.8333,notebooks/fine_tuned_model_RoBERTa_augumentation,
 Fine-Tuned Model,T5,small,5-folded,-,0.80,notebooks/fine_tuned_model_t5,"Worth trying with more epochs (9 were run, increasing performance)"
 Fine-Tuned Model,T5,base,5-folded,-,0.83,notebooks/fine_tuned_model_t5,"Worth trying with more epochs (9 were run, increasing performance)"
-Fine-Tuned Model,T5,large,5-folded,-,-,notebooks/fine_tuned_model_t5,Can be run in the insitute
-Fine-Tuned Model with Augmentation,BART,facebook/bart-base,5-folded,XXX,XXX,notebooks/fine_tuned_model_with_augmentation_bert,
+Fine-Tuned Model,T5,large,5-folded,-,-,notebooks/fine_tuned_model_t5,"Can be run in the insitute"
 Fine-Tuned LLM,LLAMA2,HuggingFaceH4/tiny-random-LlamaForSequenceClassification,5-folded,-,0.29,notebooks/fine_tuned_llm_llama2,
 Fine-Tuned LLM,LLAMA2,princeton-nlp/Sheared-LLaMA-1.3B + trained classifier,5-folded,-,0.19,notebooks/fine_tuned_llm_llama2,"Worth trying with more epochs (15 were run, increasing performance)"
 Fine-Tuned LLM,LLAMA2,Meta 7B + trained classifier,5-folded,-,-,notebooks/fine_tuned_llm_llama2,"Too big to train, requires 80GB of vRAM"
