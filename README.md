@@ -40,7 +40,7 @@ In our journey to understand and expand upon the original findings, we have:
     - [LLAMA2 Chat](/notebooks/llm_chat_llama2.ipynb)
 - **Introducing data augmentation techniques**
     - **Data Augmentation**: Enhanced dataset diversity by introducing synonyms and letter replacements within sentences.
-    - [RoBERTa](/notebooks/fine_tuned_model_RoBERTa_augumentation.ipynb)
+      - [RoBERTa](/notebooks/fine_tuned_model_RoBERTa_augumentation.ipynb)
 
 ### Results
 
