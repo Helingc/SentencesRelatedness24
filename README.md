@@ -16,7 +16,7 @@ Notably, our project achieved a best cross-validation Spearman correlation score
 
 ### Experimentation and Methodology
 In our journey to understand and expand upon the original findings, we have:
-- **Reproduced experiments** from the original paper, assessing the robustness and reproducibility of the reported results.
+- [**Reproduced experiments**](/notebooks/lexical_overlap_dice.ipynb)  from the original paper, assessing the robustness and reproducibility of the reported results.
 - **Explored new methods** and techniques, including various model architectures and pre-trained models, to enhance our understanding and application of semantic relatedness.
 - **Experimented with a diverse range of approaches and classes of models**, including:
   - **Lexical Overlap**: Assessing relatedness based on the overlap of words and phrases.
